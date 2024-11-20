@@ -16,25 +16,25 @@ set_rates = rospy.ServiceProxy('set_rates', srv.SetRates)
 land = rospy.ServiceProxy('land', Trigger)
 
 print('Take off and hover 1 m above the ground')
-navigate(x=0, y=0, z=2, frame_id='body', auto_arm=True)
+navigate(x=0, y=0, z=1, frame_id='body', auto_arm=True)
 rospy.sleep(15) # Wait for 10 seconds
 
 print('Fly forward 5 m')
-navigate(x=0, y=5, z=2, frame_id='aruco_map')
-rospy.sleep(30) # Wait for 30 seconds
-print('Fly forward 5 m')
-navigate(x=5, y=5, z=2, frame_id='aruco_map')
-rospy.sleep(30) # Wait for 30 seconds
-print('Fly forward 5 m')
-navigate(x=5, y=0, z=2, frame_id='aruco_map')
-rospy.sleep(30) # Wait for 30 seconds
-print('Fly forward 5 m')
-navigate(x=0, y=0, z=2, frame_id='aruco_map')
-rospy.sleep(30) # Wait for 30 seconds
-
+navigate(x=1, y=1, z=1, frame_id='aruco_map')
 print(get_telemetry()) # Print drone's state
-
-rospy.sleep(30) # Wait for 30 seconds
+rospy.sleep(15) # Wait for 30 seconds
+print('Fly forward 5 m')
+navigate(x=2, y=2, z=2, frame_id='aruco_map')
+print(get_telemetry()) # Print drone's state
+rospy.sleep(15) # Wait for 30 seconds
+# print('Fly forward 5 m')
+# navigate(x=5, y=0, z=2, frame_id='aruco_map')
+# rospy.sleep(30) # Wait for 30 seconds
+print('Fly forward 5 m')
+navigate(x=0, y=0, z=1, frame_id='aruco_map')
+rospy.sleep(15) # Wait for 30 seconds
+print(get_telemetry()) # Print drone's state
+rospy.sleep(15) # Wait for 30 seconds
 
 print('Perform landing')
 land()

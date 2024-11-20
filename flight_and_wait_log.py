@@ -36,28 +36,28 @@ point = 1 # set pointS
 log(str(get_telemetry()), point) # write log
 # rospy.sleep(15)
 
-navigate(x = 15, y = 0, z = 0, frame_id = 'body')
+navigate(x = 10, y = 0, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 2')
 point = 2 # set point
 log(str(get_telemetry()), point) # write log
 # rospy.sleep(15)
 
-navigate(x = 0, y = 15, z = 0, frame_id = 'body')
+navigate(x = 0, y = 10, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 3')
 point = 3 # set point
 log(str(get_telemetry()), point)  # write log
 # rospy.sleep(15)
 
-navigate(x = -15, y = 0, z = 0, frame_id = 'body')
+navigate(x = -10, y = 0, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 4')
 point = 4 #set point
 log(str(get_telemetry()), point) # write log
 # rospy.sleep(15)
 
-navigate(x = 0, y = -15, z = 0, frame_id = 'body')
+navigate(x = 0, y = -10, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 1')
 
