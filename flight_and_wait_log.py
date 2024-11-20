@@ -25,7 +25,6 @@ def wait_arrival(tolerance=0.2):
     rospy.sleep(2)
 
 def log(data, point_number, name = "log.txt"):
-    global cnt
     file = open(f"log{point_number}", 'w')
     file.write(f"log_number: {point_number}" + "\n") 
     file.write(data + "\n")
@@ -33,32 +32,32 @@ def log(data, point_number, name = "log.txt"):
 
 navigate(x = 0, y = 0, z = 1, frame_id = 'body', auto_arm = True)
 wait_arrival()
-point = 1 # set point
+point = 1 # set pointS
 log(str(get_telemetry()), point) # write log
-rospy.sleep(15)
+# rospy.sleep(15)
 
-navigate(x = 1, y = 0, z = 0, frame_id = 'body')
+navigate(x = 15, y = 0, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 2')
 point = 2 # set point
 log(str(get_telemetry()), point) # write log
-rospy.sleep(15)
+# rospy.sleep(15)
 
-navigate(x = 0, y = 1, z = 0, frame_id = 'body')
+navigate(x = 0, y = 15, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 3')
 point = 3 # set point
 log(str(get_telemetry()), point)  # write log
-rospy.sleep(15)
+# rospy.sleep(15)
 
-navigate(x = -1, y = 0, z = 0, frame_id = 'body')
+navigate(x = -15, y = 0, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 4')
 point = 4 #set point
 log(str(get_telemetry()), point) # write log
-rospy.sleep(15)
+# rospy.sleep(15)
 
-navigate(x = 0, y = -1, z = 0, frame_id = 'body')
+navigate(x = 0, y = -15, z = 0, frame_id = 'body')
 wait_arrival()
 print('point 1')
 
@@ -66,5 +65,6 @@ print('point 1')
 rospy.sleep(5)
 
 land()
+print('land')
 
 
