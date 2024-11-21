@@ -4,6 +4,7 @@ import rospy
 from clover import srv
 from std_srvs.srv import Trigger
 from sensor_msgs.msg import Range
+from sensor_msgs.msg import Imu
 
 rospy.init_node('flight')
 
